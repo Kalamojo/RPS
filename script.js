@@ -56,7 +56,7 @@ function game() {
         console.log("Ooooooof. Sucks to suck man. Computer Wins.");
     } else if (myScore > compScore) {
         console.log("Lets Gooooooooo! You won! You are literally the best.")
-    } else if (myScore == compSocre) {
+    } else if (myScore == compScore) {
         console.log("No shot. A draw. There Must be some bugs in this.");
     }
     else {
