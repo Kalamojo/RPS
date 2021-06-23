@@ -17,7 +17,7 @@ function game() {
     let myScore = 0;
 
     function round() {
-        for (let i = 0; i <= 5; i++) {
+        for (let i = 1; i <= 5; i++) {
             
             let umg = prompt("Rock, paper, or scissors?", "Rock");
             let playerSelection = umg.toLowerCase();
@@ -56,6 +56,8 @@ function game() {
         console.log("Ooooooof. Sucks to suck man. Computer Wins.");
     } else if (myScore > compScore) {
         console.log("Lets Gooooooooo! You won! You are literally the best.")
+    } else if (myScore == compSocre) {
+        console.log("No shot. A draw. There Must be some bugs in this.");
     }
     else {
         console.log("Um. Okay then.");
