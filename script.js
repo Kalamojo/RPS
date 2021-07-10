@@ -62,8 +62,8 @@ function round(playerSelection) {
         times -= 1;
     }
 
-    comScore.textContent = compScore;
-    meScore.textContent = myScore;
+    comScore.textContent = `Computer Score: ${compScore}`;
+    meScore.textContent = `Your Score: ${myScore}`;
 
     times += 1;
 
@@ -82,9 +82,9 @@ function round(playerSelection) {
             console.log("Um. Okay then.");
             results.textContent = "Um. Okay then.";
         }
-        rock.style.visibility = "hidden";
-        paper.style.visibility = "hidden";
-        scissors.style.visibility = "hidden";
+        rock.style.display = "none";
+        paper.style.display = "none";
+        scissors.style.display = "none";
 
         EOG.textContent = "Please the reload the page to play again.";
     }
