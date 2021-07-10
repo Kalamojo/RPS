@@ -1,3 +1,9 @@
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('scissors');
+
+
+
 function computerPlay() {
     let number = Math.random() * 3;
     if (number / 2 < 0.75) {
@@ -11,16 +17,17 @@ function computerPlay() {
 
 
 
+
+
 function game() {
     
     let compScore = 0;
     let myScore = 0;
 
+
     function round() {
-        for (let i = 1; i <= 5; i++) {
             
-            let umg = prompt("Rock, paper, or scissors?", "Rock");
-            let playerSelection = umg.toLowerCase();
+            let playerSelection = playerS;
             let computerSelection = computerPlay();
             
             if (playerSelection == "rock" && computerSelection == "Paper") {
@@ -46,7 +53,6 @@ function game() {
                 console.log("Its a draw! Play another round");
                 i -= 1;
             }
-        }
 
     }
     
