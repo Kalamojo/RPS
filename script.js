@@ -1,8 +1,6 @@
 let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
-let scissors = document.querySelector('scissors');
-
-
+let scissors = document.querySelector('#scissors');
 
 function computerPlay() {
     let number = Math.random() * 3;
@@ -15,60 +13,62 @@ function computerPlay() {
     }
 }
 
+let compScore = 0;
+let myScore = 0;
+let times = 0;
 
 
+rock.addEventListener('click', (() => {
+    round("rock");
+}));
+paper.addEventListener('click', (() => {
+    let playerS = paper.value;
+    round("paper");
+}));
+scissors.addEventListener('click', (() => {
+    let playerS = scissors.value;
+    round("scissors");
+}));
 
-
-function game() {
-    
-    let compScore = 0;
-    let myScore = 0;
-
-
-    function round() {
+function round(playerSelection) {
+    let computerSelection = computerPlay();
             
-            let playerSelection = playerS;
-            let computerSelection = computerPlay();
-            
-            if (playerSelection == "rock" && computerSelection == "Paper") {
-                console.log("You Lose! Paper beats Rock");
-                compScore += 1;
-            } else if (playerSelection == "paper" && computerSelection == "Rock") {
-                console.log("Yay! You Won! Paper beats Rock");
-                myScore += 1;
-            } else if (playerSelection == "paper" && computerSelection == "Scissors") {
-                console.log("You Lose! Scissors beats Paper");
-                compScore += 1;
-            } else if (playerSelection == "scissors" && computerSelection == "Paper") {
-                console.log("Yay! You Won! Scissors beats Paper");
-                myScore += 1;
-            } else if (playerSelection == "scissors" && computerSelection == "Rock") {
-                console.log("You Lose! Scissors beats Rock");
-                compScore += 1;
-            } else if (playerSelection == "rock" && computerSelection == "Scissors") {
-                console.log("Yay! You Won! Rock beats Scissors");
-                myScore += 1;
-            }
-            else {
-                console.log("Its a draw! Play another round");
-                i -= 1;
-            }
-
-    }
-    
-    round();
-
-    if (compScore > myScore) {
-        console.log("Ooooooof. Sucks to suck man. Computer Wins.");
-    } else if (myScore > compScore) {
-        console.log("Lets Gooooooooo! You won! You are literally the best.")
-    } else if (myScore == compScore) {
-        console.log("No shot. A draw. There Must be some bugs in this.");
+    if (playerSelection == "rock" && computerSelection == "Paper") {
+        console.log("You Lose! Paper beats Rock");
+        compScore += 1;
+    } else if (playerSelection == "paper" && computerSelection == "Rock") {
+        console.log("Yay! You Won! Paper beats Rock");
+        myScore += 1;
+    } else if (playerSelection == "paper" && computerSelection == "Scissors") {
+        console.log("You Lose! Scissors beats Paper");
+        compScore += 1;
+    } else if (playerSelection == "scissors" && computerSelection == "Paper") {
+        console.log("Yay! You Won! Scissors beats Paper");
+        myScore += 1;
+    } else if (playerSelection == "scissors" && computerSelection == "Rock") {
+        console.log("You Lose! Rock beats Scissors");
+        compScore += 1;
+    } else if (playerSelection == "rock" && computerSelection == "Scissors") {
+        console.log("Yay! You Won! Rock beats Scissors");
+        myScore += 1;
     }
     else {
-        console.log("Um. Okay then.");
+        console.log("Its a draw! Play another round");
+        times -= 1;
     }
 
-}
+    times += 1;
 
-game();
+    if (times >=5) {
+        if (compScore > myScore) {
+            console.log("Ooooooof. Sucks to suck man. Computer Wins.");
+        } else if (myScore > compScore) {
+            console.log("Lets Gooooooooo! You won! You are literally the best.")
+        } else if (myScore == compScore) {
+            console.log("No shot. A draw. There Must be some bugs in this.");
+        }
+        else {
+            console.log("Um. Okay then.");
+        }
+    }
+}
